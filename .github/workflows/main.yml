@@ -20,13 +20,14 @@ jobs:
       - name: Compile LaTeX documents
         uses: xu-cheng/latex-action@v3
         with:
+          working_directory: themes
           root_file: |
-            themes/main.tex
-            themes/ch1_pdf.tex
-            themes/ch2_pdf.tex
-            themes/ch3_pdf.tex
-            themes/ch4_pdf.tex
-            themes/ch5_pdf.tex
+            main.tex
+            ch1_pdf.tex
+            ch2_pdf.tex
+            ch3_pdf.tex
+            ch4_pdf.tex
+            ch5_pdf.tex
           # The action will compile each file listed in root_file
 
       - name: Prepare PDFs for MkDocs
