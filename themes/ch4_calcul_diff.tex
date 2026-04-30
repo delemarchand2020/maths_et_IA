@@ -1,0 +1,32 @@
+\chapter{Calcul Différentiel}
+
+L'apprentissage des réseaux de neurones repose sur l'ajustement de leurs paramètres en fonction de l'erreur produite. Cette adaptation nécessite de calculer des dérivées pour propager l'erreur.
+
+\section{Dérivées Partielles et Gradient}
+
+\begin{definition}[Gradient]
+Soit une fonction $f : \mathbb{R}^n \rightarrow \mathbb{R}$. Le gradient de $f$, noté $\nabla f(x)$, est le vecteur des dérivées partielles par rapport à chaque coordonnée :
+$$ \nabla f(x) = \left( \frac{\partial f}{\partial x_1}, \frac{\partial f}{\partial x_2}, \dots, \frac{\partial f}{\partial x_n} \right)^T $$
+\end{definition}
+
+\section{Jacobiennes et Hessiennes}
+
+\begin{definition}[Matrice Jacobienne]
+Pour une fonction vectorielle $f : \mathbb{R}^n \rightarrow \mathbb{R}^m$, la Jacobienne $J$ est la matrice $m \times n$ dont l'élément $(i,j)$ est $\frac{\partial f_i}{\partial x_j}$.
+\end{definition}
+
+\begin{definition}[Matrice Hessienne]
+Pour une fonction scalaire $f : \mathbb{R}^n \rightarrow \mathbb{R}$, la matrice Hessienne $H$ est la matrice carrée $n \times n$ des dérivées partielles secondes :
+$$ H_{i,j} = \frac{\partial^2 f}{\partial x_i \partial x_j} $$
+\end{definition}
+
+\section{Rétropropagation (Backpropagation)}
+
+\begin{theorem}[Règle de la Chaîne (Chain Rule)]
+Si $y = g(x)$ et $z = f(y)$, alors la dérivée de $z$ par rapport à $x$ est donnée par le produit des Jacobiennes :
+$$ \frac{\partial z}{\partial x} = \frac{\partial z}{\partial y} \frac{\partial y}{\partial x} $$
+\end{theorem}
+
+\begin{proof}
+La rétropropagation exploite directement cette règle de la chaîne de manière récursive, en partant de la fonction de perte (la sortie) et en remontant couche par couche jusqu'à l'entrée, ce qui permet un calcul efficace du gradient par rapport à tous les poids du réseau.
+\end{proof}

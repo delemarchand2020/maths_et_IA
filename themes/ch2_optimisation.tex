@@ -1,0 +1,34 @@
+\chapter{Optimisation}
+
+L'optimisation est au cœur de l'apprentissage automatique : on cherche en permanence à minimiser une fonction de coût (ou perte) par rapport aux paramètres d'un modèle.
+
+\section{Convexité}
+
+\begin{definition}[Fonction Convexe]
+Une fonction $f : \mathbb{R}^n \rightarrow \mathbb{R}$ est convexe si, pour tous $x, y \in \mathbb{R}^n$ et pour tout $\theta \in [0, 1]$, on a :
+$$ f(\theta x + (1-\theta)y) \leq \theta f(x) + (1-\theta)f(y) $$
+\end{definition}
+
+\begin{theorem}[Minimum Global]
+Si une fonction de coût $J$ est strictement convexe, alors tout minimum local de $J$ est un minimum global unique.
+\end{theorem}
+
+\section{Descente de Gradient}
+
+La descente de gradient est l'algorithme d'optimisation du premier ordre le plus utilisé pour minimiser une fonction de coût différentiable $J(\theta)$.
+
+\begin{definition}[Mise à jour du gradient]
+L'itération de la descente de gradient est donnée par :
+$$ \theta_{t+1} = \theta_t - \alpha \nabla J(\theta_t) $$
+où $\alpha$ est le taux d'apprentissage (learning rate) et $\nabla J(\theta_t)$ est le gradient de la fonction de coût au point $\theta_t$.
+\end{definition}
+
+\section{Multiplicateurs de Lagrange}
+
+Pour les problèmes d'optimisation sous contraintes, on utilise la méthode des multiplicateurs de Lagrange.
+
+\begin{definition}[Lagrangien]
+Pour minimiser $f(x)$ sous la contrainte d'égalité $g(x) = 0$, on introduit le Lagrangien :
+$$ \mathcal{L}(x, \lambda) = f(x) + \lambda g(x) $$
+Les points critiques sont trouvés en résolvant $\nabla \mathcal{L}(x, \lambda) = 0$.
+\end{definition}

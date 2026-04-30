@@ -1,0 +1,17 @@
+site/
+docs/pdfs/
+__pycache__/
+*.pyc
+.venv/
+venv/
+env/
+
+# LaTeX generated files
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.toc
+*.pdf

@@ -1,0 +1,27 @@
+\chapter{Algèbre Linéaire \& Tenseurs}
+
+L'algèbre linéaire est le langage universel dans lequel sont écrites les données en intelligence artificielle. Des simples vecteurs aux tenseurs multidimensionnels, comprendre ces structures est essentiel pour manipuler l'information.
+
+\section{Espaces Vectoriels}
+
+\begin{definition}[Espace Vectoriel]
+Un espace vectoriel $V$ sur un corps $K$ (généralement $\mathbb{R}$ ou $\mathbb{C}$) est un ensemble muni de deux lois (addition interne et multiplication par un scalaire) vérifiant des propriétés de commutativité, d'associativité et de distributivité.
+\end{definition}
+
+\section{Matrices et Applications Linéaires}
+
+Les matrices permettent de représenter les applications linéaires entre espaces vectoriels de dimension finie. Dans les réseaux de neurones, les poids d'une couche dense (Fully Connected) sont représentés par une matrice $W$.
+
+\begin{theorem}[Décomposition en Valeurs Singulières - SVD]
+Toute matrice réelle $A \in \mathbb{R}^{m \times n}$ peut être décomposée sous la forme :
+$$ A = U \Sigma V^T $$
+où $U$ est une matrice orthogonale $m \times m$, $V$ est une matrice orthogonale $n \times n$, et $\Sigma$ est une matrice rectangulaire diagonale $m \times n$ contenant les valeurs singulières de $A$.
+\end{theorem}
+
+\begin{proof}
+La preuve repose sur le fait que $A^TA$ et $AA^T$ sont des matrices symétriques réelles et semi-définies positives. Leurs vecteurs propres forment les colonnes de $V$ et $U$ respectivement, tandis que les valeurs singulières sont les racines carrées de leurs valeurs propres (qui sont communes et réelles positives).
+\end{proof}
+
+\section{Calcul Tensoriel pour le Deep Learning}
+
+En Deep Learning, les tenseurs généralisent le concept de vecteurs et de matrices à des dimensions supérieures. Un vecteur est un tenseur d'ordre 1, une matrice d'ordre 2, et une image RGB d'ordre 3.

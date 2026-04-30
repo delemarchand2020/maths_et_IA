@@ -1,0 +1,28 @@
+\chapter{Probabilités \& Information}
+
+L'IA ne modélise pas la certitude absolue, mais navigue dans l'incertitude. La théorie des probabilités offre le cadre mathématique pour gérer cette incertitude, tandis que la théorie de l'information quantifie les données.
+
+\section{Distributions de Probabilités}
+
+\begin{definition}[Distribution Normale]
+La loi normale (ou Gaussienne) de moyenne $\mu$ et d'écart-type $\sigma$ a pour densité de probabilité :
+$$ f(x) = \frac{1}{\sigma\sqrt{2\pi}} e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2} $$
+\end{definition}
+
+\section{Théorie de l'Information}
+
+\begin{definition}[Entropie de Shannon]
+L'entropie d'une variable aléatoire discrète $X$ ayant une distribution de probabilité $P$ est définie par :
+$$ H(X) = - \sum_{x \in X} P(x) \log P(x) $$
+Elle mesure la quantité d'incertitude ou de "surprise" inhérente aux résultats possibles de $X$.
+\end{definition}
+
+\section{Entropie Croisée}
+
+L'entropie croisée est la fonction de perte la plus courante pour les problèmes de classification en apprentissage automatique.
+
+\begin{definition}[Entropie Croisée]
+L'entropie croisée entre une vraie distribution $P$ et une distribution estimée $Q$ est :
+$$ H(P, Q) = - \sum_{x \in X} P(x) \log Q(x) $$
+Minimiser l'entropie croisée équivaut à minimiser la divergence de Kullback-Leibler (KL) entre $P$ et $Q$.
+\end{definition}

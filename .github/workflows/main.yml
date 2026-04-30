@@ -1,0 +1,47 @@
+name: Build and Deploy Maths for AI
+
+on:
+  push:
+    branches:
+      - main
+      - master
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Compile LaTeX documents
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: |
+            themes/main.tex
+            themes/ch1_algebre.tex
+            themes/ch2_optimisation.tex
+            themes/ch3_probabilites.tex
+            themes/ch4_calcul_diff.tex
+            themes/ch5_geometrie.tex
+          # The action will compile each file listed in root_file
+
+      - name: Prepare PDFs for MkDocs
+        run: |
+          mkdir -p docs/pdfs
+          mv themes/*.pdf docs/pdfs/
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.x
+
+      - name: Install MkDocs and Material Theme
+        run: |
+          pip install mkdocs-material
+
+      - name: Deploy MkDocs to GitHub Pages
+        run: mkdocs gh-deploy --force

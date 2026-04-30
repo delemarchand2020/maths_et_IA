@@ -1,0 +1,28 @@
+\chapter{Géométrie des Données}
+
+Les données modernes (images, textes, graphes) résident souvent dans des espaces de très haute dimension. Cependant, elles sont souvent contraintes à vivre sur des sous-espaces de plus faible dimension appelés variétés (manifolds).
+
+\section{Variétés (Manifolds)}
+
+L'hypothèse des variétés stipule que les données réelles de grande dimension (par exemple, des images de visages) se concentrent près d'une variété de faible dimension plongée dans l'espace de grande dimension.
+
+\begin{definition}[Variété Différentielle]
+Une variété différentielle de dimension $d$ est un espace topologique qui ressemble localement à l'espace euclidien $\mathbb{R}^d$.
+\end{definition}
+
+\section{Espaces Latents}
+
+En apprentissage profond (notamment avec les Auto-encodeurs et les GANs), le réseau apprend à projeter les données depuis l'espace d'entrée (de haute dimension) vers un espace latent de dimension réduite, en capturant les caractéristiques sémantiques.
+
+\section{Métriques de Distance}
+
+Dans ces espaces latents, la distance euclidienne standard n'est souvent pas appropriée pour mesurer la similarité sémantique.
+
+\begin{definition}[Distance de Minkowski]
+La distance de Minkowski d'ordre $p$ entre deux vecteurs $x, y \in \mathbb{R}^n$ est définie par :
+$$ D_p(x, y) = \left( \sum_{i=1}^n |x_i - y_i|^p \right)^{1/p} $$
+\end{definition}
+
+\begin{corollary}[Cas particuliers]
+Pour $p=1$, c'est la distance de Manhattan. Pour $p=2$, c'est la distance euclidienne classique.
+\end{corollary}

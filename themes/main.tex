@@ -1,0 +1,32 @@
+\documentclass[12pt,a4paper]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{amsmath, amsthm, amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+
+% Définitions des environnements mathématiques
+\newtheorem{theorem}{Théorème}[chapter]
+\newtheorem{definition}{Définition}[chapter]
+\newtheorem{lemma}{Lemme}[chapter]
+\newtheorem{corollary}{Corollaire}[chapter]
+
+\title{\textbf{Maths for AI}\\Les Fondements Mathématiques de l'Intelligence Artificielle}
+\author{Instructeur}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\include{ch1_algebre}
+\include{ch2_optimisation}
+\include{ch3_probabilites}
+\include{ch4_calcul_diff}
+\include{ch5_geometrie}
+
+\end{document}
