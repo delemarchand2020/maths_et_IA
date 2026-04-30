@@ -22,17 +22,22 @@ jobs:
         with:
           root_file: |
             themes/main.tex
-            themes/ch1_algebre.tex
-            themes/ch2_optimisation.tex
-            themes/ch3_probabilites.tex
-            themes/ch4_calcul_diff.tex
-            themes/ch5_geometrie.tex
+            themes/ch1_pdf.tex
+            themes/ch2_pdf.tex
+            themes/ch3_pdf.tex
+            themes/ch4_pdf.tex
+            themes/ch5_pdf.tex
           # The action will compile each file listed in root_file
 
       - name: Prepare PDFs for MkDocs
         run: |
           mkdir -p docs/pdfs
-          mv themes/*.pdf docs/pdfs/
+          mv themes/main.pdf docs/pdfs/
+          mv themes/ch1_pdf.pdf docs/pdfs/ch1_algebre.pdf
+          mv themes/ch2_pdf.pdf docs/pdfs/ch2_optimisation.pdf
+          mv themes/ch3_pdf.pdf docs/pdfs/ch3_probabilites.pdf
+          mv themes/ch4_pdf.pdf docs/pdfs/ch4_calcul_diff.pdf
+          mv themes/ch5_pdf.pdf docs/pdfs/ch5_geometrie.pdf
 
       - name: Setup Python
         uses: actions/setup-python@v5
