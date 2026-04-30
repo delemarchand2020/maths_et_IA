@@ -28,3 +28,9 @@ Vous souhaitez ajouter des démonstrations mathématiques, corriger une erreur o
 6. **Ouvrez une Pull Request**.
 
 Merci pour votre aide dans la construction de cet écosystème !
+
+---
+> **Note :** Ce projet est un "projet jouet" (POC) explorant l'automatisation de recherche. 
+> L'infrastructure et les contenus ont été générés par l'agent de vibe coding **Antigravity**, propulsé par le modèle **Gemini**.
+---
+
